@@ -1,5 +1,5 @@
-(function(jQuery) {
-    jQuery.widget("phylotree", {
+jQuery(function() {
+    jQuery.widget("custom.phylotree", {
         options: {
             lineHeight: 0,
             branchThickness: 0,
@@ -23,20 +23,23 @@
             // instance private variables
             
             // get JSON object of tree
-            if(this.options.inputFormat=='newick') {this.JSONtree = this.newickParse(this.options.treeString)}
+            if(this.options.inputFormat=='newick') {this.JSONtree = this._newickParse(this.options.treeString)}
             else if(this.options.inputFormat=='phyloxml') {}
             else {
                 // don't understand the format
             }
 
             console.log(this.JSONtree);
-            this.refresh()
+            this._refresh();
         },
 
         _refresh: function() {
         },
 
         _destroy: function() {
+
+        },
+        _createTree: function() {
 
         },
 
